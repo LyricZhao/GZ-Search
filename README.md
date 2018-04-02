@@ -1,8 +1,8 @@
-####GZ Search
+###GZ Search
 
 A simple "Si Xiu Mu Ke" search engine.
 
-####Developers
+###Developers
 
 Gu Yuxian, Zhao Chenggang
 
