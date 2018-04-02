@@ -1,0 +1,157 @@
+2018-03-31 21:30:36 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: problem_spider)
+2018-03-31 21:30:36 [scrapy.utils.log] INFO: Versions: lxml 4.1.1.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 13.1.0, Python 2.7.10 (default, Jul 15 2017, 17:16:57) - [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)], pyOpenSSL 0.13.1 (LibreSSL 2.2.7), cryptography unknown, Platform Darwin-17.4.0-x86_64-i386-64bit
+2018-03-31 21:30:36 [scrapy.crawler] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'problem_spider.spiders', 'SPIDER_MODULES': ['problem_spider.spiders'], 'LOG_FILE': 'problem_spider.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'problem_spider'}
+2018-03-31 21:30:37 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2018-03-31 21:30:37 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-03-31 21:30:37 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-03-31 21:30:37 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2018-03-31 21:30:37 [scrapy.core.engine] INFO: Spider opened
+2018-03-31 21:30:37 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-03-31 21:30:37 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-31
+2018-03-31 21:30:37 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-30
+2018-03-31 21:30:37 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-29
+2018-03-31 21:30:37 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-28
+2018-03-31 21:30:38 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-27
+2018-03-31 21:30:38 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-26
+2018-03-31 21:30:38 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-25
+2018-03-31 21:30:38 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-24
+2018-03-31 21:30:39 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-23
+2018-03-31 21:30:39 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-22
+2018-03-31 21:30:39 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-21
+2018-03-31 21:30:39 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-20
+2018-03-31 21:30:39 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-19
+2018-03-31 21:30:40 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-18
+2018-03-31 21:30:40 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-17
+2018-03-31 21:30:40 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-16
+2018-03-31 21:30:40 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-15
+2018-03-31 21:30:40 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-14
+2018-03-31 21:30:41 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-13
+2018-03-31 21:30:41 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-12
+2018-03-31 21:30:41 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-11
+2018-03-31 21:30:41 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-10
+2018-03-31 21:30:41 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-09
+2018-03-31 21:30:42 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-08
+2018-03-31 21:30:42 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-07
+2018-03-31 21:30:42 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-06
+2018-03-31 21:30:42 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-05
+2018-03-31 21:30:42 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-04
+2018-03-31 21:30:43 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-03
+2018-03-31 21:30:43 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-02
+2018-03-31 21:30:43 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-03-01
+2018-03-31 21:30:43 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-02-28
+2018-03-31 21:30:43 [problem] INFO: Analyzing problem from zikao365.com, URL: http://member.zikao365.com/zikao-qz/create/daytest/getQues4NoCache.shtm?Forum_id=1454&method=1&d=2018-02-27
+2018-03-31 22:03:03 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: problem_spider)
+2018-03-31 22:03:03 [scrapy.utils.log] INFO: Versions: lxml 4.1.1.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 13.1.0, Python 2.7.10 (default, Jul 15 2017, 17:16:57) - [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)], pyOpenSSL 0.13.1 (LibreSSL 2.2.7), cryptography unknown, Platform Darwin-17.4.0-x86_64-i386-64bit
+2018-03-31 22:03:03 [scrapy.crawler] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'problem_spider.spiders', 'SPIDER_MODULES': ['problem_spider.spiders'], 'LOG_FILE': 'problem_spider.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'problem_spider'}
+2018-03-31 22:03:03 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2018-03-31 22:03:03 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-03-31 22:03:03 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-03-31 22:03:03 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2018-03-31 22:03:03 [scrapy.core.engine] INFO: Spider opened
+2018-03-31 22:03:03 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-03-31 22:03:03 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/Users/stdafx/Desktop/Assignment/GZ Searcher/Spider/problem_spider/problem_spider/spiders/spider.py", line 37, in start_requests
+    if crawlList['ZIKAO365']:
+NameError: global name 'crawlList' is not defined
+2018-03-31 22:03:03 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-03-31 22:03:03 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 3, 31, 14, 3, 3, 993407),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 31485952,
+ 'memusage/startup': 31485952,
+ 'start_time': datetime.datetime(2018, 3, 31, 14, 3, 3, 990848)}
+2018-03-31 22:03:03 [scrapy.core.engine] INFO: Spider closed (finished)
+2018-03-31 22:03:08 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: problem_spider)
+2018-03-31 22:03:08 [scrapy.utils.log] INFO: Versions: lxml 4.1.1.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.4.0, w3lib 1.19.0, Twisted 13.1.0, Python 2.7.10 (default, Jul 15 2017, 17:16:57) - [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)], pyOpenSSL 0.13.1 (LibreSSL 2.2.7), cryptography unknown, Platform Darwin-17.4.0-x86_64-i386-64bit
+2018-03-31 22:03:08 [scrapy.crawler] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'problem_spider.spiders', 'SPIDER_MODULES': ['problem_spider.spiders'], 'LOG_FILE': 'problem_spider.log', 'LOG_LEVEL': 'INFO', 'BOT_NAME': 'problem_spider'}
+2018-03-31 22:03:08 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2018-03-31 22:03:08 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-03-31 22:03:08 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-03-31 22:03:08 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2018-03-31 22:03:08 [scrapy.core.engine] INFO: Spider opened
+2018-03-31 22:03:08 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-03-31 22:03:08 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/Users/stdafx/Desktop/Assignment/GZ Searcher/Spider/problem_spider/problem_spider/spiders/spider.py", line 37, in start_requests
+    if crawlList['ZIKAO365']:
+NameError: global name 'crawlList' is not defined
+2018-03-31 22:03:08 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-03-31 22:03:08 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 3, 31, 14, 3, 8, 141311),
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 7,
+ 'memusage/max': 31297536,
+ 'memusage/startup': 31297536,
+ 'start_time': datetime.datetime(2018, 3, 31, 14, 3, 8, 138833)}
+2018-03-31 22:03:08 [scrapy.core.engine] INFO: Spider closed (finished)
