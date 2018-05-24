@@ -27,7 +27,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sdt.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sdt.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sdt.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Makefile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state>
+              <caret column="17" selection-start-column="11" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -273,12 +273,12 @@
       <workItem from="1526988249298" duration="11975000" />
       <workItem from="1527065125412" duration="1040000" />
       <workItem from="1527143891281" duration="2253000" />
-      <workItem from="1527148036059" duration="8394000" />
+      <workItem from="1527148036059" duration="9067000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101702000" />
+    <option name="totallyTimeSpent" value="102375000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,17 +672,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dataBaseWriter.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="156" column="40" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prComputer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="197" column="15" selection-start-line="197" selection-start-column="15" selection-end-line="197" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataBaseWriter.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="156" column="40" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -693,13 +700,6 @@
           <folding>
             <element signature="e#25#34#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>

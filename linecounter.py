@@ -1,14 +1,33 @@
 import os
 
-okpat = ["cpp", "h"]
+okpat = ["cpp", "h", "sh"]
 
 def check(file):
-	s = file.split('.')
-	if len(s) == 1 or s[1] in okpat:
+	# Makefile
+
+	if file == "Makefile" or file == "makefile":
 		return True
+	
+	s = file.split('.')
+	if len(s) == 1:
+		return True
+
+	# only core spider counts	
+	if s[1] == "py":
+		if "spider" in s[0]:
+			print file
+			return True	
+		else:
+			return False
+
+	# other files		
+	if s[1] in okpat:
+		print file
+		return True
+
 	return False
 	
-def counter(path)
+def counter(path):
 	files = os.listdir(path)
 
 	tot_line = 0
