@@ -1,0 +1,3 @@
+/Users/stdafx/Desktop/Assignment/GZ Searcher/RequestHandler/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/stdafx/Desktop/Assignment/GZ Searcher/RequestHandler/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/stdafx/Desktop/Assignment/GZ Searcher/RequestHandler/cmake-build-debug/CMakeFiles/RequestHandler.dir

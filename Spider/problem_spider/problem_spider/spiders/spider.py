@@ -6,6 +6,7 @@ Problem Spider Core By Lyric
 '''
 
 import re
+import zmq
 import time
 import scrapy
 import datetime
@@ -18,6 +19,21 @@ def debug_loop():
         pass
     return
 
+class MsgSwap:
+    def __init__(self):
+        self.port = "4723"
+        self.context = zmq.Context()
+        self.socket = self.context.socket(zmq.REQ)
+        self.socket.connect("tcp://localhost:%s" % self.port)
+
+    def sendData(self, strData):
+        print "Sending:"
+        print strData
+        self.socket.send_string(strData)
+        feedbackMSG = self.socket.recv()
+
+ZMQ_Swaper = MsgSwap()
+
 class problemSpider(Spider):
 
     name = "problem"
@@ -26,12 +42,18 @@ class problemSpider(Spider):
                        '9120.cn',
                        'examw.com']
 
+    # zikao365.com 9120.cn examw.com
+
     headers = { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', }
     crawlList = {
-        'ZIKAO365' : False,
-        '9120': False,
-        'EXAMW': False,
+        'ZIKAO365' : True,
+        '9120': True,
+        'EXAMW': True,
     }
+
+    def decodeSender(self, type, title, url, context, related):
+        sendContext = "@GZ_TYPE@" + str(type) + "@GZ_TITLE@" + title + "@GZ_URL@" + url + "@GZ_CONTEXT@" + context + "@GZ_RELATED@" + related + "@GZ_END@"
+        ZMQ_Swaper.sendData(sendContext)
 
     def plog(self, log_str):
         self.logger.info(log_str)
@@ -82,28 +104,41 @@ class problemSpider(Spider):
             allText += text + '\n'
         return allText
 
+    def isLineEmpty(self, singleLine):
+        for c in singleLine:
+            if not (c == ' ' or c == '\t' or c == '\n' or c == '\r' or c == u'\xa0'):
+                return False
+        return True
+
     def problemSplit(self, mainContext):
-        pass
+        lines = mainContext.splitlines()
+        emptyCounter = 0
+        currentProblem = ""
+        problems = []
+        for line in lines:
+            if self.isLineEmpty(line):
+                emptyCounter += 1
+            else:
+                if emptyCounter >= 3:
+                    if len(currentProblem) > 0:
+                        problems.append(currentProblem)
+                    currentProblem = ""
+                    emptyCounter = 0
+                currentProblem += line + '\n'
+        problems.append(currentProblem)
+        return problems
 
-    def singleProblemAnalyer(self, context):
-        answerPos = context.find(u'答案')
-        analysePos = context.find('解析')
-
-    # Return question, selection, answer, analyse
-    # TBC
     def problemAnalyzer(self, mainContext):
         problems = self.problemSplit(mainContext)
-        questions = []
-        selections = []
-        answers = []
-        analyses = []
+        '''
+        print "LEN = " + str(len(problems))
         for problem in problems:
-            question, selection, answer, analyse = self.singleProblemAnalyer(problem)
-            questions.append(question)
-            selections.append(selection)
-            answers.append(answer)
-            analyses.append(analyse)
-        return questions, selections, answers, analyses
+            print '#### Begin ####'
+            print problem
+            print '#### End ####'
+        debug_loop()
+        '''
+        return problems
 
     def parse_365(self, response):
         url = response.url
@@ -121,6 +156,13 @@ class problemSpider(Spider):
             # print answer
             analyse = response.xpath('//div[@class="ana"]/text()').extract()[1]
             # print analyse
+            # type[01], title, url, context, related
+            allContext = question
+            for sel in selection:
+                allContext += sel
+            allContext += answer
+            self.decodeSender(1, question, url, allContext, "")
+
             year, mon, day = self.getTimeofURL(response.url)
             curDate = datetime.datetime(year, mon, day)
             preDate = curDate - datetime.timedelta(days = 1)
@@ -153,7 +195,9 @@ class problemSpider(Spider):
         # Handling problem
         mainContextArr = response.xpath('//div[@class="am-g blog-content"]//td/p/text()').extract()
         mainContext = self.mergeStr(mainContextArr)
-        question, selection, answer, analyse = self.problemAnalyzer(mainContext)
+        problems = self.problemAnalyzer(mainContext)
+        for problem in problems:
+           self.decodeSender(1,  problem, url, problem, "")
 
         # Jump to next page
         curPage = int(url[url.find('&pageno=') + 8 : len(url)])
@@ -216,7 +260,7 @@ class problemSpider(Spider):
         contextTitle = response.xpath('//div[@id="News"]/div[@class="title"]/h3/text()').extract_first()
         contextMain = response.xpath('//div[@id="NewsBox"]/p/text()').extract()
 
-        print contextTitle
+        self.decodeSender(1,  contextTitle, url, ''.join(contextMain), "")
 
         rollPage = response.xpath('//div[@class="page"]/a/@hreft').extract()
         if len(rollPage) != 0:

@@ -6,6 +6,7 @@ News Spider Core By Lyric
 '''
 
 import re
+import zmq
 import scrapy
 
 from unicodedata import numeric
@@ -24,13 +25,43 @@ def debug_loop():
         pass
     return
 
+class MsgSwap:
+    def __init__(self):
+        self.port = "4723"
+        self.context = zmq.Context()
+        self.socket = self.context.socket(zmq.REQ)
+        self.socket.connect("tcp://localhost:%s" % self.port)
+
+    def sendData(self, strData):
+        print "Sending:"
+        print strData
+        self.socket.send_string(strData)
+        feedbackMSG = self.socket.recv()
+
+ZMQ_Swaper = MsgSwap()
+
 class newsSpider(Spider):
 
+    send_counter = 0
     name = "news"
     allowed_domains = ['chinanews.com',]
     headers = { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36', }
 
     # index_dic = {} # scrapy has made this function defaultly enabled
+
+    # @GZ_TYPE@...@GZ_TITLE@...@GZ_URL@...@GZ_CONTEXT@...@GZ_RELATED@...@GZ_END@
+
+    def decodeSender(self, type, title, url, context, related):
+        if len(title) < 1 or len(url) < 1:
+            return
+        print "sending data ..."
+        sendContext = "@GZ_TYPE@" + str(type) + "@GZ_TITLE@" + title + "@GZ_URL@" + url + "@GZ_CONTEXT@" + context + "@GZ_RELATED@" + related + "@GZ_END@"
+        sendContext = re.sub(u'\s', '', sendContext)
+        # print sendContext
+        ZMQ_Swaper.sendData(sendContext)
+        print "send ok !"
+        # debug_loop()
+
 
     def plog(self, log_str):
         self.logger.info(log_str)
@@ -43,6 +74,7 @@ class newsSpider(Spider):
         yield scrapy.Request(url = debug_url, callback = self.parse_news, headers = self.headers)
         '''
         start_url = 'http://www.chinanews.com/'
+
         yield scrapy.Request(url = start_url, callback = self.parse_index, headers = self.headers)
 
 
@@ -153,24 +185,31 @@ class newsSpider(Spider):
         # Unknown
         if contextType == -1:
             self.plog(u'Analyzing unknown page OK, Title: %s' % title)
-            yield None
 
         # News
         elif contextType == 0:
             self.plog(u'Analyzing news page OK, Title: %s' % title)
-            yield None
 
         # Videos
         elif contextType == 1:
             self.plog(u'Analyzing video page OK, Title: %s' % title)
-            yield None
 
         # Picture
         elif contextType == 2:
             self.plog(u'Analyzing picture page OK, Title: %s' % title)
-            yield None
 
         # Live
         elif contextType == 2:
             self.plog(u'Analyzing live page OK, Title: %s' % title)
-            yield None
+
+        # in some cases the url format is not good
+        for i in range(0, len(related)):
+            if related[i].startswith("//"):
+                related[i] = "http:" + related[i]
+            elif related[i].startswith("www"):
+                related[i] = "http://" + related[i]
+
+        # Send to CoreHandler
+        self.send_counter += 1
+        print 'Trying to send the %d msg.' % self.send_counter
+        self.decodeSender(0, title, response.url, "".join(context), ",".join(related))
