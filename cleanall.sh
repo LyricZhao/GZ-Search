@@ -5,4 +5,6 @@ cd ../RequestHandler
 make clean
 cd ../wSplit
 rm -rf *.o
-cd ..
+cd ../SearchSite/Glue
+make clean
+cd ../..

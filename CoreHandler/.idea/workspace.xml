@@ -195,9 +195,9 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="2117" />
+    <option name="x" value="1680" />
     <option name="y" value="35" />
-    <option name="width" value="1243" />
+    <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
@@ -273,12 +273,12 @@
       <workItem from="1526988249298" duration="11975000" />
       <workItem from="1527065125412" duration="1040000" />
       <workItem from="1527143891281" duration="2253000" />
-      <workItem from="1527148036059" duration="9067000" />
+      <workItem from="1527148036059" duration="9374000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102375000" />
+    <option name="totallyTimeSpent" value="102682000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -290,10 +290,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2117" y="35" width="1243" height="1050" extended-state="0" />
+    <frame x="1680" y="35" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22831424" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1681736" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32923076" />
       <window_info anchor="bottom" id="CMake" order="4" weight="0.14153846" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />

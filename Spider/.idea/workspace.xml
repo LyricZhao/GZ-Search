@@ -92,9 +92,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="2117" />
+    <option name="x" value="1680" />
     <option name="y" value="35" />
-    <option name="width" value="1243" />
+    <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
@@ -191,18 +191,17 @@
       <workItem from="1526988249766" duration="3530000" />
       <workItem from="1527065120604" duration="1011000" />
       <workItem from="1527143887454" duration="774000" />
-      <workItem from="1527148036447" duration="5559000" />
+      <workItem from="1527148036447" duration="5683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33147000" />
+    <option name="totallyTimeSpent" value="33271000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2117" y="35" width="1243" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="1680" y="35" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49928057" visible="true" weight="0.22258593" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49928057" visible="true" weight="0.16395418" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
