@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 import os
 import ctypes
 import hashlib
+import random
 from ctypes import *
 
 AllNewsResult = []
@@ -19,53 +20,67 @@ def searchStart(request):
     return render_to_response("StartPage.html")
 
 def receiveInput(request):
-    AllNewsResult.clear()
-    AllAnswerResult.clear()
     textDict = {}
     textDict['input'] = request.GET.get('searchText', False)
-    # print(textDict['input'])
-    input_p = c_wchar_p(textDict['input'])
-    so = ctypes.cdll.LoadLibrary
-    # lib = so("C:\Guyuxian\Discrete Mathematics(2)\GZSearcher\CXXHandler\CXXHandler.so")
-    # ctypes.create_unicode_buffer
-    lib.CXXSearch(input_p, len(textDict['input']))
-    n = lib.ResultSize()
-    textDict['cxxinput'] = input_p.value
-    textDict['n'] = n
+    inputText = textDict['input']
+    if 'seriousSearch' in request.GET:
+        AllNewsResult.clear()
+        AllAnswerResult.clear()
+        # print(textDict['input'])
+        input_p = c_wchar_p(textDict['input'])
+        so = ctypes.cdll.LoadLibrary
+        # lib = so("C:\Guyuxian\Discrete Mathematics(2)\GZSearcher\CXXHandler\CXXHandler.so")
+        # ctypes.create_unicode_buffer
+        lib.CXXSearch(input_p, len(textDict['input']))
+        n = lib.ResultSize()
+        textDict['cxxinput'] = input_p.value
+        textDict['n'] = n
 
-    for i in range(0, n):
-        c_i = c_int(i)
+        for i in range(0, n):
+            c_i = c_int(i)
 
-        #compute title
-        pyGetTitle = lib.GetTitle
-        pyGetTitle.argtypes = [c_int]
-        pyGetTitle.restype = c_char_p
-        btitle = pyGetTitle(c_i)
-        title = btitle.decode()
+            #compute title
+            pyGetTitle = lib.GetTitle
+            pyGetTitle.argtypes = [c_int]
+            pyGetTitle.restype = c_char_p
+            btitle = pyGetTitle(c_i)
+            title = btitle.decode()
+            title = title[0 : min(len(title), 30)] + u"..."
 
-        #compute url
-        pyGetUrl = lib.GetUrl
-        pyGetUrl.argtypes = [c_int]
-        pyGetUrl.restype = c_char_p
-        burl = pyGetUrl(c_i)
-        url = burl.decode()
+            #compute url
+            pyGetUrl = lib.GetUrl
+            pyGetUrl.argtypes = [c_int]
+            pyGetUrl.restype = c_char_p
+            burl = pyGetUrl(c_i)
+            url = burl.decode()
 
-        #compute context
-        pyGetContext = lib.GetContext
-        pyGetContext.argtypes = [c_int]
-        pyGetContext.restype = c_char_p
-        bcontext = pyGetContext(c_i)
-        context = bcontext.decode()
+            #compute context
+            pyGetContext = lib.GetContext
+            pyGetContext.argtypes = [c_int]
+            pyGetContext.restype = c_char_p
+            bcontext = pyGetContext(c_i)
+            context = bcontext.decode()
+            context = context[0 : min(len(context), 100)] + u"..."
 
-        #compute type
-        type = lib.GetType(c_i)
-        result = {'title': title, 'url': url, 'context': context}
-        if type == 0:
-            AllNewsResult.append(result)
+            #compute type
+            type = lib.GetType(c_i)
+            result = {'title': title, 'url': url, 'context': context}
+            if type == 0:
+                AllNewsResult.append(result)
+            else:
+                AllAnswerResult.append(result)
+
+        return render(request, 'SeriousAnswer.html', {'answers': AllAnswerResult, 'number': len(AllAnswerResult), 'searchInput': inputText})
+    else:
+        ans = random.randint(1, 4)
+        if ans == 1:
+            return render(request, 'Aanswer.html', {'searchInput': inputText})
+        elif ans == 2:
+            return render(request, 'Banswer.html', {'searchInput': inputText})
+        elif ans == 3:
+            return render(request, 'Canswer.html', {'searchInput': inputText})
         else:
-            AllAnswerResult.append(result)
-
-    return render(request, 'SeriousAnswer.html', {'answers': AllAnswerResult, 'number': len(AllAnswerResult)})
+            return render(request, 'Danswer.html', {'searchInput': inputText})        
 
 def showSeriousAnswer(request):
     return render(request, 'SeriousAnswer.html', {'answers': AllAnswerResult, 'number': len(AllAnswerResult)})

@@ -22,7 +22,7 @@ public:
     void getval(void *keyd, int length, Dbt &data);
     bool exist(void *keyd, int length);
     void put(void *keyd, int key_length, void *datad, int data_length);
-    void errInfo(const std:: string err);
+    void errInfo(const std:: string err);   ``
 };
 
 class dbDUP: public mBerkeleyDB {

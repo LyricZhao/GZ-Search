@@ -5,7 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	     <meta content="always" name="referrer">
        <meta name="theme-color" content="#2932e1">
-    <title>****_GZ搜索</title>
+    <title>{{searchInput}}_GZ搜索</title>
 <style data-for="result" type="text/css" id="css_newi_result">
  body{color:#333;background:#fff;padding:6px 0 0;margin:0;position:relative;min-width:900px}
  body,th,td,.p1,.p2{font-family:arial}
@@ -1178,7 +1178,7 @@
                 <img class="index-logo-src" src="../static/images/logo.jpg" alt="到GZ首页" title="到GZ首页">
 								<img class="index-logo-srcnew" src="../static/images/logo.jpg" alt="到GZ首页" title="到GZ首页">
 							</a>
-							<form id="form" name="f" action="searchInput" class="fm">
+							<form id="form" name="seriousSearch" action="searchInput" class="fm">
 								<div class="bdsug bdsugbg" style="height: auto; display: none;">
 									<div style="text-align:right; background:#fafafa; color:#666; height:25px; line-height:25px;">
 									</div>
@@ -1187,10 +1187,10 @@
 									<span class="soutu-btn"></span>
 									<div id="kw_tip" style="width: initial; margin-left: 67px; max-width: 468px; display: none;" unselectable="on" onselectstart="return false;" class="s_ipt_tip">
 									</div>
-									<input id="kw" name="searchText" class="s_ipt" value="" maxlength="255" autocomplete="off">
+									<input id="kw" name="searchText" class="s_ipt" value="{{searchInput}}" maxlength="255" autocomplete="off">
 								</span>
 								<span class="bg s_btn_wr">
-									<input type="submit" id="su" value="GZ一下" class="bg s_btn">
+									<input type="submit" id="su" value="GZ一下" class="bg s_btn" name = "seriousSearch">
 								</span>
 							</form>
 						</div>
@@ -1201,7 +1201,7 @@
     	<div class="s_tab" id="s_tab"><b>答案</b>
 				<a href="news" wdfield="word" onmousedown="return c({&#39;fm&#39;:&#39;tab&#39;,&#39;tab&#39;:&#39;news&#39;})">新闻</a>
 			</div>
-			
+
 			<div class="head_nums_cont_outer OP_LOG">
 				<div class="head_nums_cont_inner" style="top:-42px">
 					<div class="search_tool_conter">
